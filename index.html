@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nobel Basements and Bathrooms | Premium Renovation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            /* Palette */
+            --color-black: #111111;
+            --color-charcoal: #1a1a1a;
+            --color-white: #ffffff;
+            --color-gold: #C5A059;
+            --color-gold-light: #E5C585;
+            --color-gold-dark: #A08040;
+            --color-gray-light: #f4f4f4;
+            --color-text-body: #4a4a4a;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+
+            /* Transitions */
+            --transition-fast: 0.3s ease;
+            
+            /* Shadows */
+            --shadow-card: 0 10px 30px rgba(0,0,0,0.05);
+            --shadow-gold: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--color-text-body);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-black);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--color-gold); }
+        .bg-black { background-color: var(--color-black); color: var(--color-white); }
+        .bg-gray { background-color: var(--color-gray-light); }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-gold-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-outline {
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-gold);
+            color: var(--color-white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title span {
+            display: block;
+            font-family: 'Lato', sans-serif;
+            color: var(--color-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1;
+        }
+
+        .logo-img {
+            height: 65px;
+            width: auto;
+            margin-bottom: 2px;
+        }
+
+        .logo-text-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            letter-spacing: 2px;
+        }
+
+        .logo-text-sub {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--color-black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-black);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--color-gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION (Lead Gen Focus) --- */
+        .hero {
+            padding-top: 120px; /* Offset for fixed header */
+            min-height: 100vh;
+            
+            
+            
+
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://opalbaths.com/wp-content/uploads/2023/10/opal-blog-8.jpg');
+
+            /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/basementluxury/1920/1080'); */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .hero-text {
+            color: var(--color-white);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            color: var(--color-white);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 300;
+            border-left: 3px solid var(--color-gold);
+            padding-left: 20px;
+        }
+
+        .hero-form-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-top: 5px solid var(--color-gold);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            max-width: 450px;
+            margin-left: auto;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--color-charcoal);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-gold);
+        }
+
+        select.form-control {
+            background-color: white;
+        }
+
+        /* --- INTRO / BENEFITS --- */
+        .benefits {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #eee;
+            transition: var(--transition-fast);
+        }
+
+        .benefit-item:hover {
+            border-color: var(--color-gold);
+            box-shadow: var(--shadow-card);
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--color-gold);
+            margin-bottom: 20px;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- OUR WORK (Gallery Preview) --- */
+        .gallery-preview {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-gray-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            group: 'project';
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-overlay h4 {
+            color: var(--color-white);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .project-overlay p {
+            color: var(--color-gold);
+            font-size: 0.9rem;
+        }
+
+        /* --- SERVICES SPLIT --- */
+        .services-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .service-block {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            
+        }
+
+       
+        .service-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            transition: transform 0.5s;
+            
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid var(--color-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+           border-radius: 10px;
+            opacity: 0.6;
+           
+        }
+     
+
+        .service-block:hover .service-bg {
+            transform: scale(1.05);
+           
+        }
+
+        /* --- ABOUT PREVIEW --- */
+        .about-preview {
+            padding: var(--spacing-xl) 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image img {
+            border-bottom: 5px solid var(--color-gold);
+            border-right: 5px solid var(--color-gold);
+        }
+
+        .check-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .check-list i {
+            color: var(--color-gold);
+            margin-right: 10px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-black);
+            color: #999;
+            padding-top: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: var(--color-white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--color-gold);
+            padding-left: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            color: var(--color-gold);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-bottom: 40px;
+            }
+            
+            .hero-text .subtitle {
+                display: inline-block;
+                border-left: none;
+                border-bottom: 3px solid var(--color-gold);
+                padding-bottom: 10px;
+                padding-left: 0;
+            }
+
+            .hero-form-card {
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .services-split {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            
+            .nav-links {
+                display: none; /* Simplified for static demo */
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <!-- Using the provided logo URL -->
+                <img src="https://z-cdn-media.chatglm.cn/files/9b4b05cf-e450-4802-a12b-61a4ce3f6948.jpg?auth_key=1872106472-c4054190769446e7bb9774373a681fdb-0-30aafc796631c835734c7ab04211236f" alt="Nobel Logo" class="logo-img">
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#bathroom-renovations">Bathroom Renovations</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <a href="#contact" class="btn btn-primary" style="display: none; @media(min-width: 768px){display:inline-block;}">Get a Quote</a>
+            
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Refined Living <br> Starts Below.</h1>
+                    <p class="subtitle">Award-winning basement and bathroom renovations designed for modern luxury.</p>
+                    <div style="margin-top: 30px;">
+                        <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px;">
+                            <i class="fas fa-check-circle text-gold"></i> Premium Craftsmanship
+                            &nbsp;&nbsp;|&nbsp;&nbsp; 
+                            <i class="fas fa-check-circle text-gold"></i> On-Time Delivery
+                        </p>
+                        <a href="#gallery" class="btn btn-outline" style="color: white; border-color: white;">View Our Work</a>
+                    </div>
+                </div>
+
+                <div class="hero-form-card" id="contact">
+                    <div class="form-title">
+                        <h3>Get Your Free Estimate</h3>
+                        <p style="font-size: 0.9rem; color: #666;">Fast turnaround. Detailed quote.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! A representative will contact you shortly.');">
+                        <div class="form-group">
+                            <label>Project Type</label>
+                            <select class="form-control">
+                                <option>Bathroom Renovation</option>
+                                <option>Basement Finishing</option>
+                                <option>Both</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="(555) 123-4567" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Consultation</button>
+                        <p style="font-size: 0.75rem; text-align: center; margin-top: 15px; color: #999;">No spam. Your privacy is protected.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Indicators / Benefits -->
+        <section class="benefits">
+            <div class="container">
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-drafting-compass benefit-icon"></i>
+                        <h4>Custom Design</h4>
+                        <p>Tailored layouts that maximize space and reflect your personal style, from concept to blueprint.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-gem benefit-icon"></i>
+                        <h4>Premium Finishes</h4>
+                        <p>We source only the highest quality materials—marble, quartz, and hardwoods for lasting luxury.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-stopwatch benefit-icon"></i>
+                        <h4>Transparent Timeline</h4>
+                        <p>We respect your time. Detailed project schedules ensure we finish on time, every time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Work (Gallery Preview) -->
+        <section class="gallery-preview" id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <span>Portfolio</span>
+                    <h2>Our Recent Masterpieces</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="project-card">
+                        <img src="https://i.pinimg.com/736x/20/9f/8e/209f8ee897dcb7515499c1427cdeff96.jpg" alt="Modern Bathroom">
+                        <div class="project-overlay">
+                            <h4>Modern Spa Bath</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://img.freepik.com/free-photo/modern-bathroom-with-bathtub-double-sink-vanity-smart-home-technology_9975-33078.jpg?semt=ais_hybrid&w=740&q=80" alt="Home Theater Basement">
+                        <div class="project-overlay">
+                            <h4>Modern Bathroom</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_auto,s_webp:avif/opalbaths.com/wp-content/uploads/2023/10/opal-blog-8-800x450.jpg" alt="Gold Accents Bath">
+                        <div class="project-overlay">
+                            <h4>Luxury Modern Bathroom</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTdQWSFJXMQQT-FJr30YxMi9pT66qMzSX25Q&s" alt="Basement Bar">
+                        <div class="project-overlay">
+                            <h4>Modern Bathroom Ideas to Enhance Your Daily Routine</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                     
+                    <div class="project-card">
+                        <img src="https://remodelingpr.com/wp-content/uploads/2021/07/houston-bathroom-contractor.jpg" alt="Basement Bar">
+                        <div class="project-overlay">
+                            <h4>The bathroom  of your dreams awaits! Call 713-427-9372</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="https://www.thebasementbuilders.ca/media/images/24.10.30-644seton-28.2e16d0ba.fill-678x510.jpg" alt="Basement Bar">
+                        <div class="project-overlay">
+                            <h4>The bathroom  of your dreams awaits! Call 713-427-9372</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">Explore Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Basement We've Bult -->
+         <!-- Our Work (Gallery Preview) -->
+        <section class="gallery-preview" id="gallery">
+            <div class="container">
+                <div class="section-title">
+                    <span>Basements we’ve built</span>
+                    <p>Whether you're looking for inspiration, or to see what we're capable of, you're in the right place.</p>
+                </div>
+                 <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                    <span>Recent Projects</span>
+                    <p>Our most recent projects.</p>
+                </div>
+
+                <div class="gallery-grid">                  
+                    <div class="project-card">
+                        <img src="https://remodelingpr.com/wp-content/uploads/2021/07/room-addition-contractor-houston.webp" alt="Modern Bathroom">
+                        <div class="project-overlay">
+                            <h4>Modern complete room for sale.</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                       
+                    </div>
+
+                    
+                    <div class="project-card">
+                        <img src="https://remodelingpr.com/wp-content/uploads/2021/07/room-additions-nw-houston.webp" alt="Home Theater Basement">
+                        <div class="project-overlay">
+                            <h4>Modern Complete room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://remodelingpr.com/wp-content/uploads/2021/07/room-addition-houston.webp" alt="Gold Accents Bath">
+                        <div class="project-overlay">
+                            <h4>Luxury Modern room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>                  
+                </div>
+
+ <!-- Classic Basements -->
+
+
+            <div class="section-title" style="text-align: left; margin-bottom: 20px; padding-top: 2.5rem;">
+                    <span>Classic Basements</span>
+                    <P>Everything you need. Nothing you don’t. Every basement we build is built to a higher spec.</P>
+            </div>
+
+                <div class="gallery-grid">                  
+                    <div class="project-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR11CSV7i2h1qe7qxnet-ZRLQyohVGCmoUqow&s" alt="Modern Bathroom">
+                        <div class="project-overlay">
+                            <h4>Modern complete room for sale.</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://image1.lightopia.com/gallery/cms2/Mitzi-Claire-Pendant.jpg">
+                        <div class="project-overlay">
+                            <h4>Modern Complete room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <!-- <img src="https://image1.lightopia.com/gallery/cms2/Terzani-Atlantis-Two-Tier-Chandelier.jpg" alt="Gold Accents Bath"> -->
+                         <img src="https://www.thebasementbuilders.ca/media/images/25.6.29-4760elgin-4.2e16d0ba.fill-840x560.jpg" alt="">
+                        <div class="project-overlay">
+                            <h4>Luxury Modern room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>                                        
+                                        
+                </div>
+
+
+                <!-- Our Premium Basements -->
+
+
+            <div class="section-title" style="text-align: left; margin-bottom: 20px; padding-top: 2.5rem;">
+                    <span>Our Premium Basements</span>
+                    <P>Crafted basements with more features.</P>
+            </div>
+
+                <div class="gallery-grid">                  
+                    <div class="project-card">
+                        <img src="https://www.thebasementbuilders.ca/media/images/25.4.28-18southshorebaychestermere.2e16d0ba.fill-840x560.jpg" alt="Modern Bathroom">
+                        <div class="project-overlay">
+                            <h4>Modern complete room for sale.</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                       
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="https://t3.ftcdn.net/jpg/08/50/55/16/360_F_850551686_f04XAzIINa5K6VFtUcEF43n2uZ73Blru.jpg">
+                        <div class="project-overlay">
+                            <h4>Modern Complete room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <!-- <img src="https://image1.lightopia.com/gallery/cms2/Terzani-Atlantis-Two-Tier-Chandelier.jpg" alt="Gold Accents Bath"> -->
+                         <img src="https://reaproconstruction.com/wp-content/uploads/2024/10/portafolio-basement-5-copy-scaled.webp" alt="">
+                        <div class="project-overlay">
+                            <h4>Luxury Modern room</h4>
+                            <p>View Project <i class="fas fa-arrow-right"></i></p>
+                        </div>
+                    </div>                                        
+                                        
+                </div>
+
+
+<!-- Classic Basements
+Everything you need. Nothing you don’t. Every basement we build is built to a higher spec. -->
+
+
+
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">Explore Full Gallery</a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Services Split -->
+        <section class="services-split" id="bathroom-renovations">
+            <div class="service-block">
+                <img src="https://www.realestate.com.au/news-image/w_2000,h_1500/v1657670701/news-lifestyle-content-assets/wp-content/production/Tastic-Ovation-Week-8-2000x1500-1.png?_i=AA" alt="Bathroom" class="service-bg">
+                <div class="service-content">
+                    <h3>Bathroom Renovations</h3>
+                    <p style="margin: 15px 0;">Transform your daily routine into a luxury experience. Heated floors, rainfall showers, and custom vanities.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="service-block">
+                <img src="https://hgtvhome.sndimg.com/content/dam/images/hgtv/fullset/2020/4/6/0/HUHH2020-Kitchens_Edina-MN_021.jpg.rend.hgtvcom.616.411.85.suffix/1586203976268.webp" alt="Basement" class="service-bg">
+                <div class="service-content">
+                    <h3>Beautiful Finished Basement</h3>
+                    <p style="margin: 15px 0;">Unlock square footage and add value to your home. Home theaters, suites, and gyms built to code.</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Preview -->
+        <section class="container about-preview" id="about" style="padding: 80px 0;">
+            <div class="about-image">
+                <img src="https://media.gettyimages.com/id/1482898406/photo/flooded-bathroom-with-plant-and-basket-floating-on-water.jpg?s=612x612&w=0&k=20&c=DyLdfp-LA6FqUJZQEeZCNDqpICc0gElXAlayVWv4syo=" alt="Nobel Team">
+            </div>
+            <div class="about-content">
+                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                    <span>About Nobel</span>
+                    <h2>Craftsmen You Can Trust</h2>
+                </div>
+                <p style="margin-bottom: 20px;">At Nobel Basements and Bathrooms, we believe renovation should be exciting, not stressful. With over a decade of experience, we combine old-world craftsmanship with modern design principles.</p>
+                <ul class="check-list">
+                    <li><i class="fas fa-check"></i> Licensed & Insured Professionals</li>
+                    <li><i class="fas fa-check"></i> 5-Year Craftsmanship Warranty</li>
+                    <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
+                </ul>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="btn btn-outline">Read Our Story</a>
+                </div>
+            </div>
+        </section>
+
+       
+
+           <!-- Why Us Preview for Basement Builders -->
+        <section class="container about-preview" id="about" style="padding: 80px 0;">
+            <!-- <div class="about-image">
+                <img src="https://media.gettyimages.com/id/1482898406/photo/flooded-bathroom-with-plant-and-basket-floating-on-water.jpg?s=612x612&w=0&k=20&c=DyLdfp-LA6FqUJZQEeZCNDqpICc0gElXAlayVWv4syo=" alt="Nobel Team">
+            </div> -->
+            <div class="about-content">
+                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                    <span>Why us?</span>
+                    <h2>Craftsmen You Can Trust</h2>
+                </div>
+                <!-- <p style="margin-bottom: 20px;">At Nobel Basements and Bathrooms, we believe renovation should be exciting, not stressful. With over a decade of experience, we combine old-world craftsmanship with modern design principles.</p> -->
+               <P style="margin-bottom: 20px; text-align: justify;">Since 2012, Nobel Basement Builders has served as the premier legal basement suite development company in Calgary and the surrounding area. With a sole focus on basements, we provide exceptional experience in converting unused areas into useful, livable suites. A smooth permitting process is ensured by our extensive expertise in local building standards and regulations. We take care of everything, from the first design to the last inspection, assisting you in utilizing Calgary's rezoning chances to build basement suites that generate revenue and adhere to the highest standards.</P>
+               
+                <ul class="check-list">
+                    <li><i class="fas fa-check"></i> Licensed & Insured Professionals</li>
+                    <li><i class="fas fa-check"></i> 5-Year Craftsmanship Warranty</li>
+                    <li><i class="fas fa-check"></i> Dedicated Project Manager</li>
+                </ul>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="btn btn-outline">Read Our Story</a>
+                </div>
+            </div>
+
+             <div class="about-image">
+                <img src="https://www.thebasementbuilders.ca/media/images/resize_24.10.30-648seton-15.2e16d0ba.fill-678x510.jpg" alt="Nobel Team">
+            </div>
+
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="bg-black text-center" style="padding: 80px 20px; color: white;">
+            <div class="container">
+                <h2 style="color: white; margin-bottom: 20px;">Ready to Start Your Project?</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px auto; opacity: 0.8;">Schedule a free in-home consultation today. Let's discuss how we can transform your space.</p>
+                <a href="#contact" class="btn btn-primary">Book Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <!-- <img src="/logo1.jpg" alt=""> -->
+                        <span class="logo-text-main" style="font-size: .5rem; margin-top: 0;">
+                            <img style="height: 35px; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;" src="./Nobel_Logo.jpg" alt="nobel">
+                            <!-- <img src="/logo1.jpg" alt=""> -->
+                            NOBEL</span>
+                        <span class="logo-text-sub" style="color: #999; font-size: 4px;">BASEMENT & BATHROOMS</span>
+                    </div>
+                    <p>Elevating homes through superior design and expert renovation services. Turning underutilized spaces into your favorite rooms.</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#bathroom-renovations">Bathrooms</a></li>
+                        <li><a href="#bathroom-renovations">Basements</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="#">Full Basement Finishing</a></li>
+                        <li><a href="#">Bathroom Remodeling</a></li>
+                        <li><a href="#">Kitchen Renovations</a></li>
+                        <li><a href="#">Home Additions</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Contact Us</h5>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Head Office</strong><br>
+                            123 Luxury Lane, Suite 100<br>
+                            Metro City, ST 12345
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Phone</strong><br>
+                            (555) 123-4567
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            info@nobelrenovations.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Nobel Basements and Bathrooms. All Rights Reserved. | Developer B. Rashid |</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
